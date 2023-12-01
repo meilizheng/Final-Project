@@ -268,6 +268,24 @@ END;
 -- Example of calling the stored procedure
 EXEC GetEmployeeOnboarding @EmployeeID = 3, @OnboardingID = 32;
 
+CREATE PROCEDURE GetEmployeeTypeOnboarding
+    @EmployeeID INT,
+    @EmployeeTypeID INT,
+    @OnboardingID INT
+AS
+BEGIN
+    SELECT e.[Name], e.[Email], e.[Phone], et.[Name] AS EmployeeTypeName, o.[StartDate] AS OnboardingDate
+    FROM [HRAdmin].[Employee] AS e
+    JOIN [HRAdmin].[EmployeeType] AS et ON e.EmployeeTypeID = et.ID
+    JOIN [HRAdmin].[OnboardingOffboarding] AS o ON e.OnboardingID = o.ID
+    WHERE e.ID = @EmployeeID
+        AND et.ID = @EmployeeTypeID
+        AND o.ID = @OnboardingID;
+END;
+
+-- Example of calling the stored procedure
+EXEC GetEmployeeTypeOnboarding @EmployeeID = 1, @EmployeeTypeID = 1, @OnboardingID = 32;
+
 -- create a view
 
 --Show each Employee and the related department A view is need to showcase which department each Employee Position is in. It should list the Position, 
