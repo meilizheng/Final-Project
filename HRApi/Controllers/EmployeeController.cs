@@ -48,7 +48,7 @@ public class EmployeeController : ControllerBase
          // Query to get a single employee from the HRAdmin.Position table based on the provided ID
          Employee employee = connection.QueryFirstOrDefault<Employee>("SELECT * FROM HRAdmin.Position WHERE ID = " + id);
 
-         // If no employee is found, return NotFound
+         // If no employee is Null, return NotFound
          if(employee == null)
          {
             return NotFound();
