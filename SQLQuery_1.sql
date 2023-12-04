@@ -336,12 +336,6 @@ BEGIN
         RETURN;
     END;
 
-    -- If you need to alter the user's default schema, uncomment and adjust the following line
-     --ALTER USER Loginhr WITH DEFAULT_SCHEMA = HRAdmin;
-
-    -- If you need to transfer the table to a different schema, uncomment and adjust the following line
-     --ALTER SCHEMA HRAdmin TRANSFER HRAdmin.Employee;
-
     -- Insert valid data into the [HRAdmin].[Employee] table
     INSERT INTO [HRAdmin].[Employee] ([Name], [Email], [Phone], [OnboardingID], [EmployeeLevelID], [EmployeeTypeID])
     VALUES (NULL, 'meili.zheng@email.com', '123-3456', 70, 26, 56);
