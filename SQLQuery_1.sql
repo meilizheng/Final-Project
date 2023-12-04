@@ -289,7 +289,6 @@ EXEC GetEmployeeTypeOnboarding @EmployeeID = 1, @EmployeeTypeID = 1, @Onboarding
 -- create a view
 
 --Show each Employee and the related department A view is need to showcase which department each Employee Position is in. It should list the Position, 
---the instuctor for the course and the department. You can assume that instructors ONLY teach courses in their department.
 
 CREATE VIEW EmployeeDepartmentPosition
 AS
